@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: v2v-booking-site
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: node index.cjs
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: INITIAL_ADMIN_NAME
+        value: Arun Sekar
+      - key: INITIAL_ADMIN_PASSWORD
+        sync: false
+      - key: SOLARHARVEST_ADMIN_PASSWORD
+        sync: false
