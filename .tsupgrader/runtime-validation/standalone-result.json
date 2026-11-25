@@ -1,0 +1,158 @@
+{
+  "planHash": "c35aeb3c5e63ac0105b9b5b0e1bd8340c46e9a5b319d59386b760bc1d5445f55",
+  "phase": "standalone",
+  "recordedAtUtc": "2026-11-25T04:59:38.9366931Z",
+  "retryCount": 2,
+  "resetBaseline": false,
+  "complete": true,
+  "result": {
+    "setupSucceeded": true,
+    "setupDurationMs": 60807,
+    "setupFailureOutput": null,
+    "assertions": [
+      {
+        "name": "typecheck",
+        "kind": "process",
+        "verificationMethod": "exit-code",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "\r\n\u003E vite-react-typescript-starter@0.0.0 typecheck\r\n\u003E tsc --noEmit -p tsconfig.json\r\n\r\n",
+        "durationMs": 14984
+      },
+      {
+        "name": "production-build",
+        "kind": "process",
+        "verificationMethod": "exit-code",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "\r\n\u003E vite-react-typescript-starter@0.0.0 build\r\n\u003E vite build\r\n\r\n\u001B[36mvite v5.4.21 \u001B[32mbuilding for production...\u001B[36m\u001B[39m\r\ntransforming...\r\n\u001B[32m\u2713\u001B[39m 1956 modules transformed.\r\nrendering chunks...\r\ncomputing gzip size...\r\n\u001B[2mdist/\u001B[22m\u001B[32mindex.html                                                  \u001B[39m\u001B[1m\u001B[2m    1.32 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip:   0.60 kB\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[32massets/solarharvest_guava_1acre_1795493488553-Dvi9VhwE.jpg  \u001B[39m\u001B[1m\u001B[2m1,202.63 kB\u001B[22m\u001B[1m\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[32massets/solarharvest_guava_3acre_1795493492040-n_WDrnak.jpg  \u001B[39m\u001B[1m\u001B[2m1,329.93 kB\u001B[22m\u001B[1m\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[35massets/index-BIQ6EUmK.css                                   \u001B[39m\u001B[1m\u001B[2m   73.18 kB\u001B[22m\u001B[1m\u001B[22m\u001B[2m \u2502 gzip:  13.37 kB\u001B[22m\r\n\u001B[2mdist/\u001B[22m\u001B[36massets/index-BRRCeEQa.js                                    \u001B[39m\u001B[1m\u001B[33m  718.36 kB\u001B[39m\u001B[22m\u001B[2m \u2502 gzip: 196.22 kB\u001B[22m\r\n\u001B[33m\r\n(!) Some chunks are larger than 500 kB after minification. Consider:\r\n- Using dynamic import() to code-split the application\r\n- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks\r\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\u001B[39m\r\n\u001B[32m\u2713 built in 13.94s\u001B[39m\r\n",
+        "durationMs": 15943
+      },
+      {
+        "name": "tests-pass",
+        "kind": "process",
+        "verificationMethod": "test-results",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "\r\n\u003E vite-react-typescript-starter@0.0.0 test\r\n\u003E vitest run\r\n\r\n\r\n\u001B[1m\u001B[7m\u001B[36m RUN \u001B[39m\u001B[27m\u001B[22m \u001B[36mv2.1.9 \u001B[39m\u001B[90mD:/Book-Slot-main\u001B[39m\r\n\r\n \u001B[32m\u2713\u001B[39m tests/admin-auth.test.ts \u001B[2m(\u001B[22m\u001B[2m4 tests\u001B[22m\u001B[2m)\u001B[22m\u001B[33m 1165\u001B[2mms\u001B[22m\u001B[39m\r\n\r\n\u001B[2m Test Files \u001B[22m \u001B[1m\u001B[32m1 passed\u001B[39m\u001B[22m\u001B[90m (1)\u001B[39m\r\n\u001B[2m      Tests \u001B[22m \u001B[1m\u001B[32m4 passed\u001B[39m\u001B[22m\u001B[90m (4)\u001B[39m\r\n\u001B[2m   Start at \u001B[22m 10:29:33\r\n\u001B[2m   Duration \u001B[22m 2.79s\u001B[2m (transform 96ms, setup 0ms, collect 106ms, tests 1.17s, environment 0ms, prepare 997ms)\u001B[22m\r\n\r\n",
+        "durationMs": 5201,
+        "testResults": {
+          "testFramework": "vitest",
+          "runnerDetectedFrom": "package_json",
+          "testsTotal": 4,
+          "testsPassed": 4,
+          "testsFailed": 0,
+          "testsSkipped": 0,
+          "parseFailed": false
+        }
+      },
+      {
+        "name": "homepage-serves",
+        "kind": "http-probe",
+        "verificationMethod": "http-status",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": null,
+        "outputSample": "HTTP 200\n\u003C!doctype html\u003E\n\u003Chtml lang=\u0022en\u0022\u003E\n\n\u003Chead\u003E\n  \u003Cmeta charset=\u0022UTF-8\u0022 /\u003E\n  \u003Clink rel=\u0022icon\u0022 type=\u0022image/png\u0022 href=\u0022/v2v-favicon.png\u0022 /\u003E\n  \u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1.0\u0022 /\u003E\n  \u003Ctitle\u003ESolarHarvest \u2014 Smart Irrigation, Fertigation \u0026 Slot Booking\u003C/title\u003E\n  \u003Cmeta name=\u0022description\u0022 content=\u0022Solar-Powered Smart Irrigation and Fertigation System with AI-Based Pest Detection for guava orchards, with client and admin slot booking.\u0022 /\u003E\n  \u003Cmeta property=\u0022og:title\u0022 content=\u0022SolarHarvest \u2014 Smart Irrigation \u0026 Slot Booking\u0022 /\u003E\n  \u003Cmeta property=\u0022og:description\u0022 content=\u0022Solar-Powered Smart Irrigation and Fertigation System with AI-Based Pest Detection for guava orchards, with client and admin slot booking.\u0022 /\u003E\n  \u003Clink rel=\u0022preconnect\u0022 href=\u0022https://fonts.googleapis.com\u0022 /\u003E\n  \u003Clink rel=\u0022preconnect\u0022 href=\u0022https://fonts.gstatic.com\u0022 crossorigin /\u003E\n  \u003Clink href=\u0022https://fonts.googleapis.com/css2?family=Bricolage\u002BGrotesque:opsz,wght@12..96,500;12..96,600;12..96,700\u0026family=IBM\u002BPlex\u002BMono:wght@400;500;600\u0026family=Plus\u002BJakarta\u002BSans:wght@400;500;600;700\u0026display=swap\u0022 rel=\u0022stylesheet\u0022 /\u003E\n  \u003Cscript type=\u0022module\u0022 crossorigin src=\u0022/assets/index-BRRCeEQa.js\u0022\u003E\u003C/script\u003E\n  \u003Clink rel=\u0022stylesheet\u0022 crossorigin href=\u0022/assets/index-BIQ6EUmK.css\u0022\u003E\n\u003C/head\u003E\n\n\u003Cbody\u003E\n  \u003Cdiv id=\u0022root\u0022\u003E\u003C/div\u003E\n\u003C/body\u003E\n\n\u003C/html\u003E\n\n--- server output ---\n\r\n\u003E vite-react-typescript-starter@0.0.0 start\r\n\u003E node index.cjs\r\n\r\n\u25C7 injected env (3) from .env // tip: \u2318 multiple files { path: [\u0027.env.local\u0027, \u0027.env\u0027] }\r\nUsing SQLite fallback for local development (PostgreSQL not configured)\r\n\u25C7 injected env (0) from .env // tip: \u2318 override existing { override: true }\r\nV2V Server running on http://0.0.0.0:3000\r\nConnected to the SQLite database.\r\nConnected to SolarHarvest separate SQLite database.\r\n",
+        "durationMs": 2077
+      },
+      {
+        "name": "legacy-admin-login-route-serves",
+        "kind": "http-probe",
+        "verificationMethod": "http-status",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": null,
+        "outputSample": "HTTP 200\n\u003C!doctype html\u003E\n\u003Chtml lang=\u0022en\u0022\u003E\n\n\u003Chead\u003E\n  \u003Cmeta charset=\u0022UTF-8\u0022 /\u003E\n  \u003Clink rel=\u0022icon\u0022 type=\u0022image/png\u0022 href=\u0022/v2v-favicon.png\u0022 /\u003E\n  \u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1.0\u0022 /\u003E\n  \u003Ctitle\u003ESolarHarvest \u2014 Smart Irrigation, Fertigation \u0026 Slot Booking\u003C/title\u003E\n  \u003Cmeta name=\u0022description\u0022 content=\u0022Solar-Powered Smart Irrigation and Fertigation System with AI-Based Pest Detection for guava orchards, with client and admin slot booking.\u0022 /\u003E\n  \u003Cmeta property=\u0022og:title\u0022 content=\u0022SolarHarvest \u2014 Smart Irrigation \u0026 Slot Booking\u0022 /\u003E\n  \u003Cmeta property=\u0022og:description\u0022 content=\u0022Solar-Powered Smart Irrigation and Fertigation System with AI-Based Pest Detection for guava orchards, with client and admin slot booking.\u0022 /\u003E\n  \u003Clink rel=\u0022preconnect\u0022 href=\u0022https://fonts.googleapis.com\u0022 /\u003E\n  \u003Clink rel=\u0022preconnect\u0022 href=\u0022https://fonts.gstatic.com\u0022 crossorigin /\u003E\n  \u003Clink href=\u0022https://fonts.googleapis.com/css2?family=Bricolage\u002BGrotesque:opsz,wght@12..96,500;12..96,600;12..96,700\u0026family=IBM\u002BPlex\u002BMono:wght@400;500;600\u0026family=Plus\u002BJakarta\u002BSans:wght@400;500;600;700\u0026display=swap\u0022 rel=\u0022stylesheet\u0022 /\u003E\n  \u003Cscript type=\u0022module\u0022 crossorigin src=\u0022/assets/index-BRRCeEQa.js\u0022\u003E\u003C/script\u003E\n  \u003Clink rel=\u0022stylesheet\u0022 crossorigin href=\u0022/assets/index-BIQ6EUmK.css\u0022\u003E\n\u003C/head\u003E\n\n\u003Cbody\u003E\n  \u003Cdiv id=\u0022root\u0022\u003E\u003C/div\u003E\n\u003C/body\u003E\n\n\u003C/html\u003E\n",
+        "durationMs": 29
+      }
+    ],
+    "executions": [
+      {
+        "source": "setup[0]",
+        "resolvedExecutable": "C:\\nvm4w\\nodejs\\npm.CMD",
+        "args": [
+          "ci"
+        ],
+        "cwd": "D:\\Book-Slot-main",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "typecheck",
+        "resolvedExecutable": "C:\\nvm4w\\nodejs\\npm.CMD",
+        "args": [
+          "run",
+          "typecheck"
+        ],
+        "cwd": "D:\\Book-Slot-main",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "production-build",
+        "resolvedExecutable": "C:\\nvm4w\\nodejs\\npm.CMD",
+        "args": [
+          "run",
+          "build"
+        ],
+        "cwd": "D:\\Book-Slot-main",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "tests-pass",
+        "resolvedExecutable": "C:\\nvm4w\\nodejs\\npm.CMD",
+        "args": [
+          "test"
+        ],
+        "cwd": "D:\\Book-Slot-main",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "homepage-serves",
+        "resolvedExecutable": "C:\\nvm4w\\nodejs\\npm.CMD",
+        "args": [
+          "start"
+        ],
+        "cwd": "D:\\Book-Slot-main",
+        "env": {
+          "PORT": "3000"
+        },
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "legacy-admin-login-route-serves",
+        "resolvedExecutable": "C:\\nvm4w\\nodejs\\npm.CMD",
+        "args": [
+          "start"
+        ],
+        "cwd": "D:\\Book-Slot-main",
+        "env": {
+          "PORT": "3000"
+        },
+        "prependPath": [],
+        "platform": "win32"
+      }
+    ]
+  }
+}
