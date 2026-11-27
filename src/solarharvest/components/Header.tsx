@@ -54,104 +54,110 @@ export function Header({
           <span>V2V Tech</span>
         </a>
 
-        {/* Zone 2: 4 Clean Single-Line Navigation Links */}
-        <nav
-          aria-label="Primary Navigation"
-          className="hidden lg:flex items-center gap-1 text-sm font-medium text-white/80"
-        >
-          <a
-            href="#our-work"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick("our-work");
-            }}
-            className="whitespace-nowrap shrink-0 rounded-lg px-3 py-1.5 transition-all duration-150 hover:bg-white/10 hover:text-white"
+        {/* Zone 2: 4 Clean Single-Line Navigation Links (Client view only) */}
+        {activeView !== "admin" && (
+          <nav
+            aria-label="Primary Navigation"
+            className="hidden lg:flex items-center gap-1 text-sm font-medium text-white/80"
           >
-            Our Work
-          </a>
-          <a
-            href="#booking-slot"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick("booking-slot");
-            }}
-            className="whitespace-nowrap shrink-0 rounded-lg px-3 py-1.5 transition-all duration-150 hover:bg-white/10 hover:text-white"
-          >
-            Book Slot
-          </a>
-          <a
-            href="#brains-behind-mission"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick("brains-behind-mission");
-            }}
-            className="whitespace-nowrap shrink-0 rounded-lg px-3 py-1.5 transition-all duration-150 hover:bg-white/10 hover:text-white"
-          >
-            Our Team
-          </a>
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick("contact");
-            }}
-            className="whitespace-nowrap shrink-0 rounded-lg px-3 py-1.5 transition-all duration-150 hover:bg-white/10 hover:text-white"
-          >
-            Contact
-          </a>
-        </nav>
+            <a
+              href="#our-work"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick("our-work");
+              }}
+              className="whitespace-nowrap shrink-0 rounded-lg px-3 py-1.5 transition-all duration-150 hover:bg-white/10 hover:text-white"
+            >
+              Our Work
+            </a>
+            <a
+              href="#booking-slot"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick("booking-slot");
+              }}
+              className="whitespace-nowrap shrink-0 rounded-lg px-3 py-1.5 transition-all duration-150 hover:bg-white/10 hover:text-white"
+            >
+              Book Slot
+            </a>
+            <a
+              href="#brains-behind-mission"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick("brains-behind-mission");
+              }}
+              className="whitespace-nowrap shrink-0 rounded-lg px-3 py-1.5 transition-all duration-150 hover:bg-white/10 hover:text-white"
+            >
+              Our Team
+            </a>
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick("contact");
+              }}
+              className="whitespace-nowrap shrink-0 rounded-lg px-3 py-1.5 transition-all duration-150 hover:bg-white/10 hover:text-white"
+            >
+              Contact
+            </a>
+          </nav>
+        )}
 
-        {/* Zone 3: Gmail User Auth + Admin Login + Primary CTA */}
+        {/* Zone 3: Gmail User Auth + Admin Login (Client view only) + Primary CTA */}
         <div className="flex items-center gap-1.5 shrink-0">
-          {user ? (
-            <div className="hidden sm:flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/10 px-2 py-1 text-[11px] backdrop-blur-md">
-              {user.avatar ? (
-                <img
-                  src={user.avatar}
-                  alt={user.name}
-                  referrerPolicy="no-referrer"
-                  className="h-6 w-6 rounded-full object-cover shadow-sm"
-                />
-              ) : (
-                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-[#7C3AED] to-[#10B981] font-bold text-white uppercase text-[10px] shadow-sm">
-                  {user.name.charAt(0) || "U"}
+          {activeView !== "admin" && (
+            <>
+              {user ? (
+                <div className="hidden sm:flex items-center gap-1.5 rounded-lg border border-white/20 bg-white/10 px-2 py-1 text-[11px] backdrop-blur-md">
+                  {user.avatar ? (
+                    <img
+                      src={user.avatar}
+                      alt={user.name}
+                      referrerPolicy="no-referrer"
+                      className="h-6 w-6 rounded-full object-cover shadow-sm"
+                    />
+                  ) : (
+                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-[#7C3AED] to-[#10B981] font-bold text-white uppercase text-[10px] shadow-sm">
+                      {user.name.charAt(0) || "U"}
+                    </div>
+                  )}
+                  <div className="text-left leading-tight">
+                    <p className="font-semibold text-white max-w-[92px] truncate text-[11px]">{user.name}</p>
+                    <p className="text-[9px] text-emerald-200/80 max-w-[92px] truncate">{user.email}</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={onSignOut}
+                    title="Sign out"
+                    className="ml-0.5 rounded p-0.5 text-white/70 hover:bg-red-500/20 hover:text-red-300 transition-colors"
+                  >
+                    <LogOut className="h-3 w-3" />
+                  </button>
                 </div>
+              ) : (
+                <button
+                  type="button"
+                  onClick={onOpenSignIn}
+                  className="inline-flex min-h-[32px] items-center justify-center gap-1.5 rounded-lg border border-white/25 bg-white/10 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:border-white/40 whitespace-nowrap shrink-0"
+                >
+                  <GoogleIcon className="h-3.5 w-3.5 rounded-full bg-white p-0.5" />
+                  <span>Sign In</span>
+                </button>
               )}
-              <div className="text-left leading-tight">
-                <p className="font-semibold text-white max-w-[92px] truncate text-[11px]">{user.name}</p>
-                <p className="text-[9px] text-emerald-200/80 max-w-[92px] truncate">{user.email}</p>
-              </div>
+
               <button
                 type="button"
-                onClick={onSignOut}
-                title="Sign out"
-                className="ml-0.5 rounded p-0.5 text-white/70 hover:bg-red-500/20 hover:text-red-300 transition-colors"
+                onClick={() => {
+                  setMobileOpen(false);
+                  onAdminLoginClick();
+                }}
+                className="inline-flex min-h-[32px] items-center justify-center gap-1 rounded-lg border border-violet-400/40 bg-violet-500/15 px-2.5 py-1 text-[11px] font-semibold text-violet-100 backdrop-blur-md transition-all duration-150 hover:bg-violet-500/30 hover:border-violet-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7C3AED] whitespace-nowrap shrink-0"
               >
-                <LogOut className="h-3 w-3" />
+                <ShieldCheck className="h-3.5 w-3.5 text-violet-300" />
+                Admin Login
               </button>
-            </div>
-          ) : (
-            <button
-              type="button"
-              onClick={onOpenSignIn}
-              className="inline-flex min-h-[32px] items-center justify-center gap-1.5 rounded-lg border border-white/25 bg-white/10 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20 hover:border-white/40 whitespace-nowrap shrink-0"
-            >
-              <GoogleIcon className="h-3.5 w-3.5 rounded-full bg-white p-0.5" />
-              <span>Sign In</span>
-            </button>
+            </>
           )}
-
-          <button
-            type="button"
-            onClick={() => {
-              setMobileOpen(false);
-              onAdminLoginClick();
-            }}
-            className="inline-flex min-h-[32px] items-center justify-center gap-1 rounded-lg border border-violet-400/40 bg-violet-500/15 px-2.5 py-1 text-[11px] font-semibold text-violet-100 backdrop-blur-md transition-all duration-150 hover:bg-violet-500/30 hover:border-violet-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7C3AED] whitespace-nowrap shrink-0"
-          >
-            <ShieldCheck className="h-3.5 w-3.5 text-violet-300" />
-            Admin Login
-          </button>
           <button
             type="button"
             onClick={() => {
@@ -167,19 +173,21 @@ export function Header({
             {activeView === "admin" ? "Client View" : "Book a Slot"}
           </button>
 
-          <button
-            type="button"
-            onClick={() => setMobileOpen((prev) => !prev)}
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/25 bg-white/10 text-white transition-colors hover:bg-white/20 lg:hidden"
-          >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          {activeView !== "admin" && (
+            <button
+              type="button"
+              onClick={() => setMobileOpen((prev) => !prev)}
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/25 bg-white/10 text-white transition-colors hover:bg-white/20 lg:hidden"
+            >
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          )}
         </div>
       </div>
 
       {/* Mobile Drawer */}
-      {mobileOpen && (
+      {mobileOpen && activeView !== "admin" && (
         <nav
           aria-label="Mobile Navigation"
           className="border-t border-white/15 bg-[#0B1611]/90 px-5 py-4 backdrop-blur-xl md:hidden"
