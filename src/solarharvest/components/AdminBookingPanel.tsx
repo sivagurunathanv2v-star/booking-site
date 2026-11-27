@@ -507,7 +507,7 @@ export function AdminBookingPanel({
                 </h2>
                 <p className="mt-1.5 text-xs leading-relaxed text-slate-300">
                   {authStatus === "unconfigured"
-                    ? "Admin access is disabled until the server administrator configures the initial admin password."
+                    ? "Admin access is disabled. Set SOLARHARVEST_ADMIN_PASSWORD in this service's Render Environment settings, then redeploy."
                     : authSource === "changed"
                     ? "Sign in with your updated administrator password."
                     : "Administrators can sign in here to view all slot booking requests, approve or decline slot timings, and track client payments."}
@@ -539,7 +539,7 @@ export function AdminBookingPanel({
                   <p className={`rounded-lg border p-3 text-sm ${authError
                     ? "border-red-400/40 bg-red-500/15 text-red-200"
                     : "border-amber-400/40 bg-amber-500/15 text-amber-200"}`}>
-                    {authError || "Admin credentials are not configured on this server."}
+                    {authError || "Set SOLARHARVEST_ADMIN_PASSWORD in Render's Environment settings and redeploy to enable admin sign-in."}
                   </p>
                 ) : (
                   <form
